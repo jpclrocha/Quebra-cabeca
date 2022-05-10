@@ -7,6 +7,8 @@ function sortear(){
         if (tabuleiro.indexOf(aleatorio) == -1)
             tabuleiro.push(aleatorio);
     }
+    document.getElementById('res').innerHTML = '';
+    document.getElementById('body').style.backgroundImage = '';
     tabuleiro[8] = '&nbsp;'
     montarTabuleiro()
 }
@@ -25,6 +27,7 @@ var ganhar = [
 
 function testeDeVitoria(){
     if(comparar(ganhar , tabuleiro)){
+        document.getElementById('body').style.backgroundImage = "url('./confetti.gif')";
         document.getElementById('res') .innerHTML = 'Você ganhou!'
     }else{
         alert('Tente um pouco mais')
